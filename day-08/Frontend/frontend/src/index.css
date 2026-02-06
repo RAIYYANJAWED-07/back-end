@@ -10,22 +10,107 @@ html,body,#root{
 }
 
 html{
-  background-color: rgb(37, 37, 37);
-  font-family: monospace;
+  background-color: #1e1e1e;
+  font-family: "Inter", monospace;
 }
 
-.notes{
+
+.note-create{
   display: flex;
   gap: 1rem;
-  padding-block: 1rem;
-  padding-inline: 3rem;
-  flex-wrap: wrap;
+  margin: 2rem auto;
+  max-width: 900px;
+  padding: 1rem;
+  background-color: #2b2b2b;
+  border-radius: 0.8rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
+.note-create input{
+  flex: 1;
+  padding: 0.7rem 0.9rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  background-color: #3a3a3a;
+  color: #fff;
+}
+
+.note-create input::placeholder{
+  color: #aaa;
+}
+
+.note-create button{
+  padding: 0.7rem 1.3rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: linear-gradient(135deg,#5b6cff,#7b84ff);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s;
+}
+
+.note-create button:hover{
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+
 .note{
-  background-color: rgb(89, 89, 89);
-  padding: 1rem;
-  border-radius: 0.7rem;
-  max-width:20rem;
-  color: rgb(254, 245, 245);
+  margin: 1rem auto;
+  max-width: 1320px;
+  background: linear-gradient(160deg,#3c3c3c,#2e2e2e);
+  padding: 1.2rem;
+  border-radius: 1rem;
+  color: #f5f5f5;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+
+.note h1{
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+  color: #ffffff;
+}
+
+.note p{
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #dcdcdc;
+  word-break: break-word;
+}
+
+
+.buttons{
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  justify-content: flex-end;
+}
+
+.buttons button{
+  border: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.45rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: transform 0.15s ease, opacity 0.15s;
+}
+
+.buttons button:hover{
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.buttons .delete-btn{
+  background-color: #c0392b;
+  color: white;
+}
+
+.buttons .edit-btn{
+  background-color: #2980b9;
+  color: white;
 }

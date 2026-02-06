@@ -1,13 +1,16 @@
 const express = require('express')
 const cors = require('cors')
+const path = require('path')
 
 const app = express()
 
 const notesModel = require('./models/notes.model')
+
 app.use(cors())
 app.use(express.json()) //middleware
+app.use(express.static('./public')) //this shows the frontend files in the backend server
 
-//**
+/**
 // post -  create notes
 // api/notes
 //  */
@@ -70,6 +73,8 @@ app.patch('/api/notes/:id', async (req,res)=>{
     })
 })
 
-
+app.use('*name' , (req,res)=>{
+    res.sendFile(path.join(__dirname,'..','/public/index.html'))
+})
 
 module.exports = app
